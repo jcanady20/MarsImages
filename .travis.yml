@@ -15,7 +15,6 @@ env:
 
 before_install:
   - chmod -R a+x ./.build.sh
-  - chmod -R a+x ./.buildNuget.sh
 
 install:
   - dotnet --version
