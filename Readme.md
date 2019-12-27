@@ -1,6 +1,6 @@
 #### Mars Images
 
-[![Build Status](https://api.travis-ci.com/jcanady20/MarsImages.svg?branch=master)]
+![Build Status](https://api.travis-ci.com/jcanady20/MarsImages.svg?branch=master)
 
 [Travis](https://travis-ci.com/jcanady20/MarsImages)
 
