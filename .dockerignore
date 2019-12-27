@@ -1,0 +1,11 @@
+# directories
+**/bin/
+**/obj/
+**/out/
+**/Properties/
+**/node_modules/
+
+# files
+Dockerfile*
+**/*.trx
+**/*.md
