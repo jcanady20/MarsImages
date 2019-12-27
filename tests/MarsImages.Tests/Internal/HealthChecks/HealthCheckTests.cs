@@ -15,7 +15,6 @@ namespace MarsImages.Tests.Internal.HealthChecks
         {
             var chk = new HealthCheck();
             var  result = await chk.CheckHealthAsync(null);
-            Assert.NotNull(result);
             Assert.IsType<HealthCheckResult>(result);
             Assert.Equal(HealthStatus.Healthy, result.Status);
         }
