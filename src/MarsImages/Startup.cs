@@ -24,7 +24,7 @@ namespace MarsImages
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<Internal.Data.IMemoryCache, Internal.Data.MemoryCache>();
-            services.AddHttpClient<Internal.Services.IImageService, Internal.Services.MarsImageService>();
+            services.AddHttpClient<Internal.Services.IMarsImageHttpClient, Internal.Services.MarsImageHttpClient>();
             services.AddHttpClient<Internal.Services.IMarsImageMetaDataHttpClient, Internal.Services.MarsImageMetaDataHttpClient>(client => {
                 client.BaseAddress = new System.Uri(Configuration["BaseUrl"]);
             });
