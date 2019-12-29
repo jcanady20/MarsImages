@@ -12,10 +12,10 @@ namespace MarsImages.Internal.Services
     public class MarsImageMetaDataService : IImageMetaDataService
     {
         private readonly ILogger _logger;
-        private readonly HttpClient _httpClient;
+        private readonly IMarsImageMetaDataHttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
-        public MarsImageMetaDataService(ILogger<MarsImageMetaDataService> logger, HttpClient httpClient, IConfiguration configuration)
+        public MarsImageMetaDataService(ILogger<MarsImageMetaDataService> logger, IConfiguration configuration, IMarsImageMetaDataHttpClient httpClient)
         {
             _logger = logger;
             _httpClient = httpClient;
@@ -30,9 +30,8 @@ namespace MarsImages.Internal.Services
                 var queryString = await GenerateQueryStringAsync(date, page, roverName);
                 var baseUrl = $"{_httpClient.BaseAddress}/{roverName}/photos?{queryString}";
                 var uri = new Uri(baseUrl);
-                var response = await _httpClient.GetStringAsync(uri);
-                var photos = JsonConvert.DeserializeObject<ImageResponse>(response);
-                results = photos.Photos;
+                var metaData = await _httpClient.GetRoverMetaDataByDateAsync(uri);
+                results = metaData.Photos;
             }
             catch (Exception e)
             {
