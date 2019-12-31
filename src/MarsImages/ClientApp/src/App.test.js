@@ -27,20 +27,24 @@ it('ImageResults Should return null I', async () => {
     const component = ReactDOM.render(<ImageResults />, container);
     expect(component).toBe(null);
 });
+
 it('ImageResults Should Render NoResultsFound', async () => {
     const images = [];
     const component = ReactDOM.render(<ImageResults images={images} />, container);
     expect(container.textContent).toEqual('No Results Found');
 });
+
 it('ImageResults Should return null II', async () => {
     const images = {};
     const component = ReactDOM.render(<ImageResults images={images} />, container);
     expect(component).toBe(null);
 });
+
 it('ImageResult should return null', async () => {
     const component = ReactDOM.render(<ImageResult />, container);
     expect(component).toBe(null);
 });
+
 it('ImageResult should Contain formated Name', async () => {
     const metaData = {
         id: 89292,
