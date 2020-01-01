@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table } from 'reactstrap';
 import ImageResult from './ImageResult';
 import NoResultsFound from './NoResultsFound';
 
@@ -9,7 +8,7 @@ const ImageResults = (props) => {
     if (!Array.isArray(images)) return null;
     if (images.length === 0) return <NoResultsFound />
     return (
-        <div style={{marginTop:'30px'}}>
+        <div style={{marginTop:'30px', display:'flex', flexWrap:'wrap'}}>
             {images.map((img, idx) => <ImageResult key={idx} metaData={img} />)}
         </div>
     );

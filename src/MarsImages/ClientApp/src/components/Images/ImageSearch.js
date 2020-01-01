@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Col, Row, Form, FormGroup, Input } from 'reactstrap';
+import { Container, Col, Row, Form } from 'reactstrap';
 import ImageResults from './ImageResults';
 import ImageDateSelection from './ImageDateSelection';
 
